@@ -1,0 +1,15 @@
+{
+  "name": "Elçi Ailesi",
+  "short_name": "Elçi Ailesi",
+  "start_url": "/Elciailesi/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#00fff5",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
