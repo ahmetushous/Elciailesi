@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abur Cubur Çarkı 🎡</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <div class="header">
+        <h3 style="color:#00fff5;">Abur Cubur Çarkı 🎡</h3>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    <div class="drawer" id="drawer">
+        <div class="drawer-header">
+            <h4 style="color:#00fff5;">📋 Son 30 Günün Logları</h4>
+            <button class="close-btn" onclick="toggleMenu()">✖</button>
+        </div>
+        <div id="logList">
+            <p style="color:#aaa; font-size:13px;">Yükleniyor...</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="authSection">
+            <h2>Giriş Yap</h2>
+            <div id="step1">
+                <input type="text" id="fullName" placeholder="Adınız Soyadınız">
+                <input type="email" id="email" placeholder="E-posta Adresiniz">
+                <button class="btn btn-main" onclick="sendOtp()">Tek Seferlik Kod Gönder</button>
+            </div>
+            <div id="step2" class="hidden">
+                <input type="text" id="otpCode" placeholder="Doğrulama Kodunu Girin" maxlength="8">
+                <button class="btn btn-main" onclick="verifyOtp()">Doğrula ve Giriş Yap</button>
+                <button id="resendBtn" class="btn btn-resend" onclick="resendOtp()" disabled>Tekrar Kod Gönder (60s)</button>
+            </div>
+        </div>
+
+        <div id="appSection" class="hidden">
+            <h3 id="welcomeText" style="color:#00fff5;"></h3>
+            
+            <div class="wheel-box">
+                <div class="pointer"></div>
+                <canvas id="canvas" width="300" height="300"></canvas>
+            </div>
+
+            <button id="spinBtn" class="btn btn-spin" onclick="spinWheel()">ÇARKI ÇEVİR 🎰</button>
+            <p id="timerText" style="margin-top:10px; font-weight:bold; color:#00fff5;"></p>
+
+            <div id="adminPanel" class="admin-panel hidden">
+                <h4 style="color:#e94560;">📦 Stok Yönetimi (Admin)</h4>
+                <input type="text" id="prodName" placeholder="Ürün Adı (Örn: Eti Canga)">
+                <input type="number" id="prodStock" placeholder="Stok Adedi">
+                <button class="btn btn-main" onclick="addProduct()">Stok Ekle</button>
+                
+                <h5 style="margin-top:15px;">Mevcut Ürünler:</h5>
+                <div id="stockList"></div>
+            </div>
+        </div>
+
+        <p id="message"></p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
