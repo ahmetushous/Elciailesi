@@ -1,0 +1,41 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, sans-serif; }
+body { background: #1a1a2e; color: #fff; display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: 20px; position: relative; overflow-x: hidden; }
+
+.header { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 450px; margin-bottom: 15px; }
+.menu-btn { background: none; border: none; color: #00fff5; font-size: 28px; cursor: pointer; }
+
+.container { width: 100%; max-width: 450px; background: #16213e; padding: 20px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center; }
+h2 { color: #e94560; margin-bottom: 15px; }
+
+input { width: 100%; padding: 12px; margin: 8px 0; border: none; border-radius: 8px; background: #0f3460; color: #fff; font-size: 15px; text-align: center; }
+input::placeholder { color: #aaa; }
+
+.btn { width: 100%; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; font-size: 16px; transition: 0.2s; }
+.btn-main { background: #e94560; color: #fff; }
+.btn-resend { background: #0f3460; color: #00fff5; border: 1px solid #00fff5; font-size: 14px; }
+.btn-resend:disabled { opacity: 0.5; cursor: not-allowed; border-color: #555; color: #aaa; }
+
+.btn-spin { background: #00fff5; color: #111; font-size: 18px; }
+.btn-spin:disabled { background: #555; color: #888; cursor: not-allowed; }
+
+.hidden { display: none !important; }
+#message { margin-top: 12px; font-size: 14px; color: #ffbd59; word-break: break-word; }
+
+/* Çark Tasarımı */
+.wheel-box { position: relative; width: 300px; height: 300px; margin: 20px auto; }
+#canvas { width: 300px; height: 300px; border-radius: 50%; border: 5px solid #e94560; }
+.pointer { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 25px solid #00fff5; z-index: 10; }
+
+/* Admin Paneli */
+.admin-panel { background: #0f3460; padding: 15px; border-radius: 12px; margin-top: 20px; text-align: left; }
+.stock-item { display: flex; justify-content: space-between; padding: 8px; background: #16213e; margin-top: 5px; border-radius: 6px; }
+
+/* 3 Çizgi Yan Menü (Monthly Log Drawer) */
+.drawer { position: fixed; top: 0; right: -320px; width: 300px; height: 100%; background: #16213e; z-index: 100; transition: 0.3s ease; padding: 20px; box-shadow: -5px 0 15px rgba(0,0,0,0.5); overflow-y: auto; text-align: left; }
+.drawer.open { right: 0; }
+.drawer-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #0f3460; padding-bottom: 10px; margin-bottom: 15px; }
+.close-btn { background: none; border: none; color: #e94560; font-size: 24px; cursor: pointer; }
+.overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 99; display: none; }
+.overlay.active { display: block; }
+
+.log-item { background: #0f3460; padding: 10px; margin-bottom: 8px; border-radius: 6px; font-size: 13px; border-left: 3px solid #00fff5; line-height: 1.4; }
