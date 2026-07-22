@@ -1,15 +1,17 @@
 {
   "name": "Elçi Ailesi",
   "short_name": "Elçi Ailesi",
+  "description": "Elçi Ailesi eğlenceli çark ve ödül uygulaması",
   "start_url": "/Elciailesi/",
   "display": "standalone",
   "background_color": "#1a1a2e",
   "theme_color": "#00fff5",
   "icons": [
     {
-      "src": "logo.png",
+      "src": "/Elciailesi/logo.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
